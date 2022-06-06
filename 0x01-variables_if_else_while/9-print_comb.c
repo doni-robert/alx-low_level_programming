@@ -1,32 +1,25 @@
 #include <stdio.h>
+
 /**
- *main - Entry point
+ * main - Entry point
  *
- *Return: 0
+ * Return: 0 if unsuccessful
  */
 int main(void)
 {
-	int c;
-	int d = 0;
-	while (d < 10)
+	int num;
+
+	for (num = 0; num <= 9; num++)
 	{
-		c = 0;
-		while (c < 10)
-		{
-			if (d != c && d < c)
-			{
-				putchar('0' + d);
-				putchar('0' + c);
-				if (c + d != 17)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-			c++;
-		}
-		d++;
+		putchar((num % 10) + '0');
+		if (num == 9)
+			continue;
+		
+		putchar(',');
+		putchar(' ');
 	}
+
 	putchar('\n');
+
 	return (0);
 }
