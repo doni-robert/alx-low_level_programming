@@ -9,7 +9,7 @@ int _sqrt_recursion(int n);
  * @root: The root to be examined
  *
  * Return: root if the number has a natural square root
- * -1 if the number does not have a natural square root 
+ * -1 if the number does not have a natural square root
  */
 int find_sqrt(int num, int root)
 {
