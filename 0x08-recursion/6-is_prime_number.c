@@ -5,16 +5,17 @@ int is_prime_number(int n);
 
 /**
  * is_divisible - Checks if a number is divisible.
- * @num: The number to be checked.
- * @div: The divisor.
+ * @num: the number to be checked.
+ * @div: the divisor.
  *
- * Return: If the number is divisible - 0.
- *         If the number is not divisible - 1.
+ * Return: 0 if the number is divisible
  */
 int is_divisible(int num, int div)
 {
 	if (num % div == 0)
 		return (0);
+	if (div == num / 2)
+		return (1);
 
 	return (is_divisible(num, div + 1));
 }
@@ -23,8 +24,8 @@ int is_divisible(int num, int div)
  * is_prime_number - Checks if a number is prime.
  * @n: The number to be checked.
  *
- * Return: If the integer is not prime - 0.
- *         If the number is prime - 1.
+ * Return: 0 if the integer is not prime
+ * -1 if the number is prime
  */
 int is_prime_number(int n)
 {
