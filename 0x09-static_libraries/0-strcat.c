@@ -1,4 +1,3 @@
-
 #include "main.h"
 
 /**
@@ -12,7 +11,7 @@
  *Return: A pointer to the destination string 
  */
 
-char *strcat(char *dest, const char *src)
+char *strcat(char *dest, char *src)
 {
 	int i = 0, dest_len = 0;
 
