@@ -7,7 +7,10 @@
  *
  * @separator: character separating strings
  * @n: number of arguments
+ * @...: variable number of strings
  *
+ * Description - IF separator is NULL, its not printed
+ *    if string is NULL, nil is printed
  */
 
 void print_strings(const char *separator, const unsigned int n, ...)
@@ -17,6 +20,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *str;
 
         va_start (ptr, n);
+	
        	for (i = 0; i < n; i++)
 	{
 		str = va_arg (ptr, char *);
@@ -30,5 +34,5 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", separator);
 	}
 	printf("\n");
-	va_end (ptr);	
+	va_end (ptr);
 }

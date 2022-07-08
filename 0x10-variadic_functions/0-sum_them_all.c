@@ -5,7 +5,10 @@
  *        parameters
  *
  * @n: number of parameters
+ * @...: variable numbers to be summed
  *
+ * Return: 0 if n == 0
+ *   else, sum of parameters
  */
 int sum_them_all(const unsigned int n, ...)
 {
@@ -14,14 +17,12 @@ int sum_them_all(const unsigned int n, ...)
 
 	if (n == 0)
 		return 0;
-	
+
 	va_start (ptr, n);
-	
+
 	for (i = 0; i < n; i++)
 		sum += va_arg (ptr, int);
-	
+
 	va_end (ptr);
 	return sum;
-	       
-		       
 }
