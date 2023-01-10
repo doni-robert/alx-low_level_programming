@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	}
 
 	num = atoi(argv[1]);
-	
+
 	if (num > 0)
 	{
 		for (i = 0; i < 5; i++)
@@ -40,5 +40,7 @@ int main(int argc, char *argv[])
 		}
 		printf("%i\n", count);
 	}
-	return (0);	
+	else
+		printf("0\n");
+	return (0);
 }
