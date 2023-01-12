@@ -4,6 +4,7 @@
  * _strlen - returns the length of a string
  *
  * @s: string to be examined
+ * Return: the length of the string
  */
 
 int _strlen(char *s)
@@ -11,7 +12,7 @@ int _strlen(char *s)
 	int len = 0;
 
 	while (*s != '\0')
-	{	
+	{
 		len++;
 		s++;
 	}
@@ -21,8 +22,8 @@ int _strlen(char *s)
 /**
  * argstostr - Concatenates all the arguments of the program
  *
- * ac: argument count
- * av: argument vector
+ * @ac: argument count
+ * @av: argument vector
  *
  * Return: a pointer to the new concatenated string
  */
