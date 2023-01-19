@@ -7,14 +7,14 @@
  * @argv: argument vector
  * @argc: argument count
  *
- * Return: 
+ * Return: 0 if successful
  */
 
 int main(int argc, char **argv)
 {
 	int (*fptr)(int, int);
-	int result;
-	
+	int result, arg1, arg2;
+
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -22,13 +22,14 @@ int main(int argc, char **argv)
 	}
 
 	fptr = get_op_func(argv[2]);
-	result = fptr(1,2);
-/*	r = op_sub(4, atoi(argv[3]));
-	r = fptr(3,4);
-	result = fptr(atoi(argv[1]),atoi(argv[3]));
-*/	
+
+	arg1 = atoi(argv[1]);
+	arg2 = atoi(argv[3]);
+
+	result = fptr(arg1, arg2);
+
 	printf("%i\n", result);
-	return(0);
+	return (0);
 }
 
 
