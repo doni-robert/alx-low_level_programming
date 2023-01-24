@@ -88,12 +88,8 @@ void print_all(const char * const format, ...)
 	va_start(ap, format);
 
 	k = 0;
-	if (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
-	while (format[k] != '\0')
+
+	while (format && format[k] != '\0')
 	{
 		j = 0;
 		while (j < 4 && format[k] != *(ft[j]._character))
