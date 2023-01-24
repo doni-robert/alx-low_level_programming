@@ -22,7 +22,11 @@ int main(int argc, char **argv)
 	}
 
 	fptr = get_op_func(argv[2]);
-
+	if (fptr == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	arg1 = atoi(argv[1]);
 	arg2 = atoi(argv[3]);
 
