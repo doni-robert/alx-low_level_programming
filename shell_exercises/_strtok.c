@@ -15,14 +15,14 @@ char **_strtok(char *str)
 	token = malloc(sizeof(char *));
 	*token = malloc(sizeof(char) * 100);
 	
-	*(token + i) = strtok(str, " ");
+	token[i] = strtok(str, " ");
 
-	while(*(token + i) != NULL)
+	while(token[i] != NULL)
 	{
 		i++;
-		*(token + i) = strtok(NULL, " ");
+		token[i] = strtok(NULL, " ");
 	}
-	*(token + i) = NULL;
+	token[i] = NULL;
 
 	return (token);
 }

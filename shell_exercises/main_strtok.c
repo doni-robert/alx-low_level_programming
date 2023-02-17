@@ -7,13 +7,13 @@
 int main()
 {
         char str[] = "The water broke!";
-        char **sub;
+        char **word;
         int i = 0;
 
-        sub = _strtok(str);
-        while(sub[i])
+        word = _strtok(str);
+        while(word[i])
         {
-                printf("%s\n", sub[i]);
+                printf("%s\n", word[i]);
                 i++;
         }
 	
