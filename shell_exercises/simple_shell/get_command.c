@@ -12,6 +12,10 @@ char *get_command(void)
 	size_t *input_size;
 
 	printf("$");
-	getline(&buffer, input_size, stdin);
+	if (getline(&buffer, input_size, stdin) < 1)
+	{
+		perror("Getline error");
+		return (NULL);
+	}
 	return (buffer);
 }

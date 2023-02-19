@@ -13,7 +13,6 @@ char **_strtok(char *str)
 	int i = 0;
 
 	token = malloc(sizeof(char *));
-	*token = malloc(sizeof(char) * 100);
 	
 	token[i] = strtok(str, " ");
 
@@ -26,4 +25,3 @@ char **_strtok(char *str)
 
 	return (token);
 }
-
