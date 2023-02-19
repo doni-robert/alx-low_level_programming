@@ -6,7 +6,7 @@
  * Return: a pointer to the inputted string
  */
 
-char **get_command(void)
+char *get_command(void)
 {
 	char *buffer = NULL;
 	size_t *input_size;

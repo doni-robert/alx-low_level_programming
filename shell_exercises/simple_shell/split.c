@@ -7,11 +7,11 @@
  * Return: an array of tokens from the split string
  */
 
-char **split(char **buffer)
+char **split(char *buffer)
 {
 	char **arr;
 
-	arr = _strtok(*buffer);
+	arr = _strtok(buffer);
 	return (arr);
 }
 

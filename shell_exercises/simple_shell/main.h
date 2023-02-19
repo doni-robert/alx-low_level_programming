@@ -10,7 +10,9 @@
 
 
 char **_strtok(char *str);
-char **get_command(void)
+char *get_command(void);
+char **split(char *buffer);
+int command_exec(char **arr);
 
 
 #endif
