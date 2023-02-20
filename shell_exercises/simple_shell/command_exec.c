@@ -6,10 +6,11 @@
  * @arr: array of strings of the commands to be executed
  * Return: 0 if successful, -1 otherwise
  */
-
+extern char **environ;
 int command_exec(char **arr)
 {
 	pid_t id;
+	int i = 0;
 
 	id = fork();
 
@@ -21,13 +22,24 @@ int command_exec(char **arr)
 
 	if (id == 0)
 	{
-		if (execve(arr[0], arr, NULL) == -1)
+		printf("Child process\n");
+                while(arr[i])
+                {
+                        printf("%s\n", arr[i]);
+                        i++;
+                }
+
+		if (execve(arr[0], arr, environ) == -1)
 		{
-			perror("Execution error");
+			perror("execution error\n");
 			return (-1);
 		}
 	}
-	wait(NULL);
+	else
+	{
+		wait(NULL);
+		printf("====Done\n====");
+	}
 	return (0);
 }
 

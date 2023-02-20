@@ -15,7 +15,6 @@ char **_strtok(char *str)
 	token = malloc(sizeof(char *));
 	
 	token[i] = strtok(str, " ");
-
 	while(token[i] != NULL)
 	{
 		i++;

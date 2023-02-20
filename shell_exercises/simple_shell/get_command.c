@@ -9,13 +9,13 @@
 char *get_command(void)
 {
 	char *buffer = NULL;
-	size_t *input_size;
+	size_t input_size = 0;
 
 	printf("$");
-	if (getline(&buffer, input_size, stdin) < 1)
-	{
+	getline(&buffer, &input_size, stdin);
+/*	{
 		perror("Getline error");
 		return (NULL);
 	}
-	return (buffer);
+*/	return (buffer);
 }

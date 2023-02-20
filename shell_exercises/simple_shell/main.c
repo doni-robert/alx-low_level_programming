@@ -5,25 +5,37 @@
  * Return: 0 if successful, -1 otherwise
  *
  */
-int main(int ac, char **av)
+int main(void)
 {
-	char *command;
+	char *command = "/bin/ls";
 	char **array;
 
 	while (1)
 	{
 		command = get_command();
 		if (command == NULL)
+		{
+			printf("get_command error");
 			return (-1);
+		}
 
 		array = split(command);
+/*	        while(array[i])
+	        {
+        	        printf("%s\n", array[i]);
+               		i++;
+       		}
+*/
 		if (array == NULL)
+		{
+			printf("split error");
 			return (-1);
+		}
 
-		if (command_exec(array) == -1)
-			return (-1);
-
+		command_exec(array);
 	}
+
+
 	return (0);
 }
 		
