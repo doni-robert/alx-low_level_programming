@@ -14,7 +14,6 @@ int main(int ac, char **av)
 	char buffer[] = "/bin/ls -l /tmp";
 	char **token;
 	int i;
-	size_t *n;
 
 
 	for (i = 0; i < 5; i++)
