@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char *command = "/bin/ls";
+	char *command;
 	char **array;
 	int i;
 
@@ -16,27 +16,25 @@ int main(void)
 		command = get_command();
 		if (command == NULL)
 		{
-			printf("get_command error");
+			perror("get_command error");
 			return (-1);
 		}
 
 		array = split(command);
-		i = 0;
-	        while(array[i])
-	        {
-        	        printf("%s\n", array[i]);
-               		i++;
-       		}
-
 		if (array == NULL)
 		{
 			printf("split error");
 			return (-1);
 		}
 
-		command_exec(array);
+		if(command_exec(array) != 0)
+		{
+			perror("command_exec error");
+			return (-1);
+		}
 	}
-
+	free(command);
+	free(array);
 
 	return (0);
 }

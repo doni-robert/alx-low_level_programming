@@ -10,14 +10,19 @@ char *get_command(void)
 {
 	char *buffer = NULL;
 	size_t input_size = 0;
-	int count;
+	size_t len;
 
 	printf("$");
-	count = getline(&buffer, &input_size, stdin);
-	printf("Characters read are %i\n %s", count, buffer);
-/*	{
+	if (getline(&buffer, &input_size, stdin) < 1)
+	{
 		perror("Getline error");
 		return (NULL);
 	}
-*/	return (buffer);
+
+        len = strlen(buffer);
+        printf("Length of string: %lu\n", len);
+
+	buffer[strlen(buffer) - 1] = '\0';
+
+	return (buffer);
 }
