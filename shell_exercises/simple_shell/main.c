@@ -9,6 +9,7 @@ int main(void)
 {
 	char *command = "/bin/ls";
 	char **array;
+	int i;
 
 	while (1)
 	{
@@ -20,12 +21,13 @@ int main(void)
 		}
 
 		array = split(command);
-/*	        while(array[i])
+		i = 0;
+	        while(array[i])
 	        {
         	        printf("%s\n", array[i]);
                		i++;
        		}
-*/
+
 		if (array == NULL)
 		{
 			printf("split error");

@@ -29,9 +29,9 @@ int command_exec(char **arr)
                         i++;
                 }
 
-		if (execve(arr[0], arr, environ) == -1)
+		if (execve(arr[0], arr, NULL) == -1)
 		{
-			perror("execution error\n");
+			perror("execution error");
 			return (-1);
 		}
 	}
