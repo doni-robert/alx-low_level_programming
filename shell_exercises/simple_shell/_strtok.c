@@ -7,18 +7,21 @@
  * Return: array of each word of the string
  */
 
-char **_strtok(char *str)
+char **_strtok(char *str, char * delim)
 {
 	char **token;
 	int i = 0;
+	int tok_size = 100;
 
-	token = malloc(sizeof(char *));
+	token = malloc(100 * sizeof(char *));
+	if (token == NULL)
+		return (NULL);
 	
-	token[i] = strtok(str, " ");
+	token[i] = strtok(str, delim);
 	while(token[i] != NULL)
 	{
 		i++;
-		token[i] = strtok(NULL, " ");
+		token[i] = strtok(NULL, delim);
 	}
 	token[i] = NULL;
 

@@ -11,7 +11,7 @@ char **split(char *buffer)
 {
 	char **arr;
 
-	arr = _strtok(buffer);
+	arr = _strtok(buffer, " ");
 
 	if (arr == NULL)
 		return (NULL);
