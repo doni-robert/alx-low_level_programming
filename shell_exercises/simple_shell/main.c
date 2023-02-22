@@ -11,7 +11,6 @@ int main(int ac, char **av, char **env)
 	char **array;
 	char *path;
 	int i;
-	char *arg = av[0];
 
 	while (1)
 	{
@@ -22,19 +21,20 @@ int main(int ac, char **av, char **env)
 			return (-1);
 		}
 
-		path = search("ls");
-                if (path == NULL)
-                {
-                        perror("path error");
-                        return (-1);
-                }
-
 		array = split(command);
 		if (array == NULL)
 		{
 			perror("split error");
 			return (-1);
 		}
+
+		path = search(array[0]);
+                if (path == NULL)
+                {
+                        perror("path error");
+                        return (-1);
+                }
+
 		array[0] = path;
 		
 		if(command_exec(array) != 0)

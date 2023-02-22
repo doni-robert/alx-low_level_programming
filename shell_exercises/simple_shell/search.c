@@ -13,6 +13,7 @@ char *search(char *command)
 	char *token, *dir; 
 	struct stat buf;
 	
+	dir = malloc(sizeof(char) * 100);
 	token = strtok(path, ":");
 	
 	while(token != NULL)
