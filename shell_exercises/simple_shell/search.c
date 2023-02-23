@@ -9,25 +9,42 @@
 
 char *search(char *command)
 {
-	char *path = getenv("PATH");
+	char *path;
 	char *token, *dir; 
 	struct stat buf;
-	
-	dir = malloc(sizeof(char) * 100);
+
+	path = getenv("PATH");
+
+	dir = malloc(sizeof(char *) * 1000);
+	if (dir == NULL)
+		return (NULL);
+
+	printf("%s\n", path);
 	token = strtok(path, ":");
-	
 	while(token != NULL)
 	{
-		dir = strdup(token);
+		printf("%s\n", path);
+		dir = strcpy(dir, token);
+		printf("%s\n", dir);
 		strcat(dir, "/");
 		strcat(dir, command);
-
+		
+		
+		printf("%s\n", dir);
 		if (stat(dir, &buf) == 0)
 		{
+			
 			return (dir);
 		}
+		
+		printf("%s\n", dir);	
 		token = strtok(NULL, ":");
+		
+		printf("%s\n", token);
+		
 	}
+
+//	printf("%s\n", dir);
 	return (NULL);	
 }
 

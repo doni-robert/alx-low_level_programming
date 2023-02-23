@@ -10,7 +10,7 @@ int main(int ac, char **av, char **env)
 	char *command;
 	char **array;
 	char *path;
-	int i;
+	int i = 0;
 
 	while (1)
 	{
@@ -20,6 +20,7 @@ int main(int ac, char **av, char **env)
 			perror("get_command error");
 			return (-1);
 		}
+		
 
 		array = split(command);
 		if (array == NULL)
@@ -27,6 +28,8 @@ int main(int ac, char **av, char **env)
 			perror("split error");
 			return (-1);
 		}
+		
+		printf("%s\n", array[0]);
 
 		path = search(array[0]);
                 if (path == NULL)
@@ -42,10 +45,15 @@ int main(int ac, char **av, char **env)
 			perror("command_exec error");
 			return (-1);
 		}
+		free(path);
+		free(command);
+		while (array[i] == NULL)
+		{
+			free(array[i]);
+			i++;
+		}
+		free(array);
 	}
-	free(command);
-	free(array);
-
 	return (0);
 }
 		
