@@ -20,7 +20,6 @@ char *get_command(void)
 	}
 
         len = strlen(buffer);
-        printf("Length of string: %lu\n", len);
 
 	buffer[strlen(buffer) - 1] = '\0';
 
