@@ -20,6 +20,7 @@ int main(int ac, char **av, char **env)
 			perror("get_command error");
 			continue;
 		}
+	
 		
 
 		array = split(command);
