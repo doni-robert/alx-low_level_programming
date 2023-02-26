@@ -20,9 +20,7 @@ int main(int ac, char **av, char **env)
 			perror("get_command error");
 			continue;
 		}
-	
 		
-
 		array = split(command);
 		if (array == NULL)
 		{
@@ -30,6 +28,15 @@ int main(int ac, char **av, char **env)
 			continue;
 		}
 		
+		printf("%s\n", array[0]);	
+		if (strcmp(array[0], "exit") == 0)  
+                {\
+			free(array);
+                        free(command);
+                        exit(0);
+
+                }
+
 
 		path = search(array[0]);
                 if (path == NULL)
@@ -48,21 +55,11 @@ int main(int ac, char **av, char **env)
 
 		free(path);
 		free(command);
-		while (array[i] == NULL)
-		{
-			free(array[i]);
-			i++;
-		}
 		free(array);
 	}
 
 	free(path);
 	free(command);
-	while (array[i] == NULL)
-	{
-		free(array[i]);
-		i++;
-	}
 	free(array);
 
 	return (0);

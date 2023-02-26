@@ -14,7 +14,10 @@ char **split(char *buffer)
 	arr = _strtok(buffer, " ");
 
 	if (arr == NULL)
+	{
+		free(NULL);
 		return (NULL);
+	}
 	return (arr);
 }
 

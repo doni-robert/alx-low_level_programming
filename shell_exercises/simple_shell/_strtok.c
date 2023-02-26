@@ -16,10 +16,6 @@ char **_strtok(char *str, char * delim)
 	if (token == NULL)
 		return (NULL);
 
-	*token = malloc(sizeof(char) * 100);
-	if (*token == NULL)
-		return (NULL);
-	
 	token[i] = strtok(str, delim);
 	while(token[i] != NULL)
 	{
