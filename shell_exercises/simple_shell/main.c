@@ -30,7 +30,7 @@ int main(int ac, char **av, char **env)
 		
 		printf("%s\n", array[0]);	
 		if (strcmp(array[0], "exit") == 0)  
-                {\
+                {
 			free(array);
                         free(command);
                         exit(0);
