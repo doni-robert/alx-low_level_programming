@@ -9,11 +9,22 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+
+typedef struct builtin
+{
+        char *cmd;
+        int (*f)(char **array);
+} builtin_t;
+
 char **_strtok(char *str, char *delim);
 char *get_command(void);
 char **split(char *buffer);
 int command_exec(char **arr);
 char *search(char *command);
+int (*search_builtin(char *name))(char **array);
+int exit_sh(__attribute__((unused)) char **array);
+
+
 
 #endif
 
