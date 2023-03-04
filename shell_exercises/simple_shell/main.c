@@ -29,31 +29,8 @@ int main(int ac, char **av, char **env)
 			continue;
 		}
 		
-<<<<<<< HEAD
-		printf("%s\n", array[0]);	
-		if (strcmp(array[0], "exit") == 0)  
-                {
-			free(array);
-                        free(command);
-                        exit(0);
-
-                }
-
-
-		path = search(array[0]);
-                if (path == NULL)
-                {
-                        perror("path error");
-                        continue;
-                }
-
-		array[0] = path;
-		
-		if(command_exec(array) != 0)
-=======
 		fptr = search_builtin(array[0]); 
 		if (fptr != NULL)
->>>>>>> update-branch
 		{
 			fptr(array);
 		}
