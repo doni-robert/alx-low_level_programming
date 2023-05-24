@@ -2,11 +2,10 @@ CC=gcc
 SRC=main.c school.c
 OBJ=$(SRC:.c=.o)
 NAME=school
-RM=rm
 CFLAGS=-Wall -Werror -Wextra -pedantic
-.PHONY: clean oclean fclean
+.PHONY: clean oclean fclean re
 
-all: $(OBJ)
+all: m.h $(OBJ)
 	$(CC) $^ -o $(NAME)
 
 clean:
